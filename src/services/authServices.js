@@ -31,34 +31,4 @@ class authServices {
   }
 }
 
-// class authServices {
-//   async autentica(nome, telefone) {
-//     const usuario = await clienteModel.buscarPorTelefone(telefone);
-
-//     if (!usuario) {
-//       throw new Error("Usuário não encontrado!");
-//     }
-
-//     return {
-//       id: usuario.id,
-//       nome: usuario.nome,
-//       telefone: usuario.telefone,
-//     };
-//   }
-
-//   async criarUsuario(nome, telefone) {
-//     const usuarioExistente = await clienteModel.buscarPorTelefone(telefone);
-
-//     if (usuarioExistente) {
-//       throw new Error("Usuário já existe com esse telefone!");
-//     }
-
-//     const novoUsuario = await clienteModel.criar(nome, telefone);
-
-//     return {
-//       novoUsuario,
-//     };
-//   }
-// }
-
 module.exports = new authServices();
