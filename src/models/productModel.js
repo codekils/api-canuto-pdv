@@ -9,12 +9,12 @@ class prodcutModel {
     return await knex("produtos").where({ id }).update(produto).returning("*");
   }
 
-  async buscarPorid(id) {
+  async buscarPorId(id) {
     return await knex("produtos").where({ id }).first();
   }
 
-  async buscasrPorNome(nome) {
-    return await knex("produtos").where("nome", "like", `%${nome}%`);
+  async buscarPorNome(name) {
+    return await knex("produtos").where("name", "ilike", `%${name}%`);
   }
 
   async buscarTodos(produtos) {
@@ -25,3 +25,5 @@ class prodcutModel {
     return await knex("produtos").where({ id }).del();
   }
 }
+
+module.exports = new prodcutModel();
